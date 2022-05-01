@@ -1,3 +1,1 @@
-let var a = fn x y. x + y, fun z c = c+c in
-	let var b = a(3,3)
-		in a(1,2)+z(1)+b
+10 ::50:: 5
