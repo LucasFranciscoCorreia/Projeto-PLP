@@ -28,10 +28,17 @@ public class ExpSub extends ExpBinaria {
 	 * Retorna o valor da Expressao de Subtracao.
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
-		return new ValorInteiro(
-				((ValorInteiro)getEsq().avaliar(amb)).valor() -
-				((ValorInteiro)getDir().avaliar(amb)).valor()
-		);
+		if(getEsq().avaliar(amb) instanceof ValorInteiro){
+			return new ValorInteiro(
+					((ValorInteiro) getEsq().avaliar(amb)).valor() -
+							((ValorInteiro) getDir().avaliar(amb)).valor()
+			);
+		}else{
+			return new ValorDecimal(
+					((ValorDecimal) getEsq().avaliar(amb)).valor() -
+							((ValorDecimal) getDir().avaliar(amb)).valor()
+			);
+		}
 	}
 
 	/**

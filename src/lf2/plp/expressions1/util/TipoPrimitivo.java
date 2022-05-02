@@ -10,6 +10,7 @@ package lf2.plp.expressions1.util;
 public enum TipoPrimitivo implements Tipo {
 
 	INTEIRO("INTEIRO"),
+	DECIMAL("DECIMAL"),
 	BOOLEANO("BOOLEANO"),
 	STRING("STRING");
 
@@ -49,6 +50,8 @@ public enum TipoPrimitivo implements Tipo {
 	public boolean eString() {
 		return this.eIgual(STRING);
 	}
+
+	public boolean eDecimal(){ return this.eIgual(DECIMAL); }
 
 	/* (non-Javadoc)
 	 * @see lf2.plp.expressions1.util.Tipo#eIgual(lf2.plp.expressions1.util.Tipo)

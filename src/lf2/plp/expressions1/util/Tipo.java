@@ -28,6 +28,8 @@ public interface Tipo {
 	 */
 	public abstract boolean eBooleano();
 
+	public abstract boolean eDecimal();
+
 	/**
 	 * Indica se esta expressao &eacute; string.
 	 * 

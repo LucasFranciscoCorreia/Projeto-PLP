@@ -27,9 +27,17 @@ public class ExpSoma extends ExpBinaria {
 	 * Retorna o valor da Expressao de Soma
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
-		return new ValorInteiro(
-			((ValorInteiro) getEsq().avaliar(amb)).valor() +
-			((ValorInteiro) getDir().avaliar(amb)).valor() );
+		if(getEsq().avaliar(amb) instanceof ValorInteiro){
+			return new ValorInteiro(
+					((ValorInteiro) getEsq().avaliar(amb)).valor() +
+					((ValorInteiro) getDir().avaliar(amb)).valor()
+			);
+		}else{
+			return new ValorDecimal(
+					((ValorDecimal) getEsq().avaliar(amb)).valor() +
+					((ValorDecimal) getDir().avaliar(amb)).valor()
+			);
+		}
 	}
 	
 	/**
@@ -45,7 +53,7 @@ public class ExpSoma extends ExpBinaria {
 	 */
 	protected boolean checaTipoElementoTerminal(AmbienteCompilacao ambiente)
 			throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
-		return (getEsq().getTipo(ambiente).eInteiro() && getDir().getTipo(ambiente).eInteiro());
+		return ((getEsq().getTipo(ambiente).eInteiro() || getEsq().getTipo(ambiente).eDecimal()) && (getDir().getTipo(ambiente).eInteiro() || getDir().getTipo(ambiente).eDecimal()));
 	}
 
 	/**

@@ -25,6 +25,7 @@ import lf2.plp.functional1.expression.IfThenElse;
 import lf2.plp.expressions2.expression.Expressao;
 import lf2.plp.expressions2.expression.Valor;
 import lf2.plp.expressions2.expression.ValorInteiro;
+import lf2.plp.expressions2.expression.ValorDecimal;
 import lf2.plp.expressions2.expression.ValorString;
 import lf2.plp.expressions2.expression.ValorBooleano;
 import lf2.plp.expressions2.expression.Id;
@@ -112,6 +113,11 @@ public class Func2Parser
       else if (val instanceof ValorFuncao)
       {
         ValorFuncao valFunc = (ValorFuncao) val;
+        System.out.println("Funcional 2 PLP Parser Version 0.0.1: resultado = " + val);
+      }
+      else if(val instanceof ValorDecimal)
+      {
+        ValorDecimal valDouble = (ValorDecimal) val;
         System.out.println("Funcional 2 PLP Parser Version 0.0.1: resultado = " + val);
       }
     }
@@ -213,6 +219,8 @@ TOKEN : /* LITERALS */
     )*
     "\"" 
     >
+  |
+    < DOUBLE_LITERAL : [ "1"-"9" ] ([ "0"-"9" ])* (".") (["0"-"9"])+ >
 }
 
 TOKEN : /* IDENTIFIERS */
@@ -326,6 +334,18 @@ Valor PValorInteiro() :
   }
 }
 
+Valor PValorDecimal() :
+{
+  Token token;
+}
+{
+  token = < DOUBLE_LITERAL > 
+  {
+    System.out.println("ValorDecimal=" + token.toString());
+    return new ValorDecimal(Double.parseDouble(token.toString()));
+  }
+}
+
 Valor PValorBooleano() :
 {
 }
@@ -373,6 +393,7 @@ Valor PValor() :
 {
   (
     retorno = PValorInteiro()
+  | retorno = PValorDecimal()
   | retorno = PValorBooleano()
   | retorno = PValorString()
   | retorno = PValorFuncao()
@@ -636,7 +657,7 @@ Expressao PExpBinaria() :
   Expressao retorno, param2;
   Id id;
   List list = null;
-  Valor value = null;
+  Expressao value = null;
 }
 {
   (
@@ -652,7 +673,7 @@ Expressao PExpBinaria() :
         retorno = new Aplicacao((Expressao) retorno, list);
       }
     |
-      < DOUBLECOLON > value = PValorInteiro() < DOUBLECOLON > param2 = PExpBinaria2() 
+      < DOUBLECOLON > value = PExpBinaria2() < DOUBLECOLON > param2 = PExpBinaria2() 
       {
         retorno = new ExpProb(retorno, param2, value);
       }

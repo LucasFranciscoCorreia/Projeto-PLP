@@ -33,7 +33,11 @@ public class ExpMenos extends ExpUnaria {
 	 */
 	public Valor avaliar(AmbienteExecucao amb) throws VariavelJaDeclaradaException, 
 			VariavelNaoDeclaradaException {
-		return new ValorInteiro(- ((ValorInteiro)getExp().avaliar(amb)).valor());
+		if(getExp().avaliar(amb) instanceof ValorInteiro){
+			return new ValorInteiro(- ((ValorInteiro) getExp().avaliar(amb)).valor());
+		}else{
+			return new ValorDecimal(- ((ValorDecimal) getExp().avaliar(amb)).valor());
+		}
 	}
 
 	/**
@@ -49,7 +53,7 @@ public class ExpMenos extends ExpUnaria {
 	 */
 	protected boolean checaTipoElementoTerminal(AmbienteCompilacao amb) throws VariavelJaDeclaradaException, 
 			VariavelNaoDeclaradaException {
-		return (getExp().getTipo(amb).eInteiro());
+		return (getExp().getTipo(amb).eInteiro() || getExp().getTipo(amb).eDecimal());
 	}
 
 	/**

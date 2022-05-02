@@ -85,6 +85,9 @@ public class TipoPolimorfico implements Tipo {
 		return this.eIgual(TipoPrimitivo.BOOLEANO);
 	}
 
+	@Override
+	public boolean eDecimal() { return this.eIgual(TipoPrimitivo.DECIMAL); }
+
 	/*
 	 * (non-Javadoc)
 	 * 

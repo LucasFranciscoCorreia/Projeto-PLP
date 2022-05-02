@@ -8,11 +8,11 @@ import lf2.plp.expressions2.memory.VariavelNaoDeclaradaException;
 
 public class ExpProb<T extends ValorConcreto> extends ExpBinaria{
 
-    private ValorInteiro prob;
+    private Expressao prob;
 
-    public ExpProb(Expressao esq, Expressao dir, Valor prob){
+    public ExpProb(Expressao esq, Expressao dir, Expressao prob){
         super(esq, dir, "prob");
-        this.prob = (ValorInteiro) prob;
+        this.prob = prob;
     }
 
     @Override
@@ -22,7 +22,11 @@ public class ExpProb<T extends ValorConcreto> extends ExpBinaria{
 
     @Override
     public Valor avaliar(AmbienteExecucao amb) throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException {
-        return Math.random()*100 < prob.valor() ? getEsq().avaliar(amb) : getDir().avaliar(amb);
+        if (prob.avaliar(amb) instanceof ValorInteiro) {
+            return Math.random() * 100 < ((ValorInteiro) this.prob.avaliar(amb)).valor() ? getEsq().avaliar(amb) : getDir().avaliar(amb);
+        } else {
+            return Math.random() * 100 < ((ValorDecimal) this.prob.avaliar(amb)).valor() ? getEsq().avaliar(amb) : getDir().avaliar(amb);
+        }
     }
 
     @Override

@@ -78,6 +78,9 @@ public class TipoFuncao implements Tipo {
 		return imagem.eBooleano();
 	}
 
+	@Override
+	public boolean eDecimal() { return imagem.eDecimal(); }
+
 	public boolean eInteiro() {
 		return imagem.eInteiro();
 	}

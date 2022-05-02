@@ -1,0 +1,2 @@
+let fun sum n = 1 + sum(n+1) ::99:: 0 in
+    sum(0)
