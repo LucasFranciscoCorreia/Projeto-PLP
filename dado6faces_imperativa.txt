@@ -1,0 +1,9 @@
+{
+    var face2 = 0, var face3 = 0, var face4 = 0, var face5 = 0, var face6 = 0;
+    face2 := 2 ::50:: 1;
+    face3 := 3 ::33.334:: face2;
+    face4 := 4 ::25:: face3;
+    face5 := 5 ::20:: face4;
+    face6 := 6 ::16.667:: face5;
+    write(face6)
+}

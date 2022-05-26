@@ -1,0 +1,6 @@
+let var face6 = 16.667 in
+    let var face5 = 20 in
+        let var face4 = 25 in
+            let var face3 = 33.333 in
+                let var face2 = 50 in
+                    6 ::face6:: (5 ::face5:: (4 ::face4:: (3 ::face3:: (2 ::face2:: 1))))

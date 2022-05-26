@@ -1,0 +1,7 @@
+{
+    var prob = 50;
+    var m1 = true ::prob:: false, var m2 = true ::prob:: false;
+    var c = 0;
+    (while m1 and m2 do c := c+1);
+    write(c)
+}

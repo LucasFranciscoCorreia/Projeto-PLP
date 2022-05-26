@@ -1,0 +1,11 @@
+package lf2.plp.imperative1.memory;
+
+import lf2.plp.expressions1.util.Tipo;
+import lf2.plp.expressions2.memory.*;
+
+public interface AmbienteCompilacaoImperativa extends AmbienteCompilacao {
+
+	public Tipo getTipoEntrada() throws VariavelNaoDeclaradaException, VariavelJaDeclaradaException,
+		EntradaVaziaException;
+
+}

@@ -1,5 +1,5 @@
 {
     var prob = 75, var m1 = true ::prob:: false, var m2 = true ::prob:: false, var c = 0;
-    (while m1 or m2 do c := c+1; m1 := true ::prob:: false; m2 := true ::prob:: false);
+    (while m1 and m2 do c := c+1; m1 := true ::prob:: false; m2 := true ::prob:: false);
     write(c)
 }
