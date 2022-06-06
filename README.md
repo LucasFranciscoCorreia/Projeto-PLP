@@ -3,7 +3,7 @@
  Este projeto tem como objetivo atender à disciplina de Paradigmas de Linguanges de Programação, ofertado pelo CIN na UFPE no semestre 2022.1
 
 ***
-#Probabilidade
+<h1>Probabilidade</h1>
 
 *Probabilidade* é um ramo da matemática em que as chances de ocorrencia de experimentos são calculadas. Ela é uma razão, um numero positivo entre 0 e 1 (ou 0 e 100), referente a um evento qualquer, medido pela quantidade de vezes que esse evento ocorre numa sequencia de acontecimentos.
 
@@ -19,7 +19,7 @@ Probabilidade não é uma questão de chance, é uma questão de **quando**.
 
 ***
 
-#Operador Probabilistico
+<h1>Operador Probabilistico</h1>
 Dado um evento **X**, existe **Y**% de chance de que ele ocorra. Caso não ocorra, o evento qualquer **Z** ocorre
  
 - Jogar uma moeda tem **50**% de chance de **dar cara**. Se não for cara, então é **coroa**;
@@ -29,9 +29,9 @@ Dado um evento **X**, existe **Y**% de chance de que ele ocorra. Caso não ocorr
 
 Este projeto estende as linguagens Funcional 2 e Imperativa 2 com um operador de probabilidade e operações com casas decimais para realizar operações com mais precisão.
 ***
-#BNF
+<h1>BNF</h1>
 
-##Funcional 2
+<h3>Funcional 2</h3>
 
 [Programa](src/lf2/plp/functional2/Programa.java) ::= [Expressao](src/lf2/plp/expressions2/expression/Expressao.java)
 ###
@@ -103,12 +103,12 @@ ListId ::= [Id](src/lf2/plp/expressions2/expression/Id.java)  |  [Id](src/lf2/pl
 ListExp ::= [Expressao](src/lf2/plp/expressions2/expression/Expressao.java)  |  [Expressao](src/lf2/plp/expressions2/expression/Expressao.java), ListExp
 ###
 
-###Imperativa 2
+<h3>Imperativa 2</h3>
 
 
 ***
-#Equipe
+<h1>Equipe</h1>
 
-####Lucas Francisco Pereira de Gois Correia - lfpgc@cin.ufpe.br
+<h5>Lucas Francisco Pereira de Gois Correia - lfpgc@cin.ufpe.br</h5>
 
-####João Victor de Almeida Santos - jvas@cin.ufpe.br
+<h5>João Victor de Almeida Santos - jvas@cin.ufpe.br</h5>
