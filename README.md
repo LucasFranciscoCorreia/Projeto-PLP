@@ -27,7 +27,7 @@ Dado um evento **X**, existe **Y**% de chance de que ele ocorra. Caso não ocorr
 - 2 dados de 6 faces tem **2.777...**% de chance de **dar 2**. Se não for 2, então é **um numero entre 3 e 12**;
   - 2 dados de 6 faces tem **16.666...**% de chance de **dar 7**. Se não for 7, então é **um numero entre 2 e 6 ou 8 e 12**;
 
-Este projeto estende as linguagens Funcional 2 e Imperativa 2 com um operador de probabilidade e operações com casas decimais para realizar operações com mais precisão.
+Este projeto estende as linguagens **Funcional 2** e **Imperativa 2** com um operador de probabilidade e casas decimais para realizar operações com mais precisão.
 ***
 <h1>BNF</h1>
 
