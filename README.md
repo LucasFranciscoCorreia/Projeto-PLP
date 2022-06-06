@@ -1,4 +1,4 @@
-#Projeto de Paradigmas de Linguagens de Programação
+&#35;Projeto de Paradigmas de Linguagens de Programação
 
  Este projeto tem como objetivo atender à disciplina de Paradigmas de Linguanges de Programação, ofertado pelo CIN na UFPE no semestre 2022.1
 
@@ -111,4 +111,4 @@ ListExp ::= [Expressao](src/lf2/plp/expressions2/expression/Expressao.java)  |  
 
 ####Lucas Francisco Pereira de Gois Correia - lfpgc@cin.ufpe.br
 
-####João Victor de Almeida Santos (@VictorJ)- jvas@cin.ufpe.br
+####João Victor de Almeida Santos - jvas@cin.ufpe.br
