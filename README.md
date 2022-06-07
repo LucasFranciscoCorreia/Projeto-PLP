@@ -105,7 +105,75 @@ ListExp ::= [Expressao](src/lf2/plp/expressions2/expression/Expressao.java)  |  
 
 <h3>Imperativa 2</h3>
 
+[Programa](src/lf2/plp/imperative2/Programa.java) ::= [Comando](src/lf2/plp/imperative1/command/Comando.java)
 
+Comando ::= [Atribuicao](src/lf2/plp/imperative1/command/Atribuicao.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [ComandoDeclaracao](src/lf2/plp/imperative1/command/ComandoDeclaracao.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [While](src/lf2/plp/imperative1/command/While.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [IfThenElse](src/lf2/plp/imperative1/command/IfThenElse.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [IO](src/lf2/plp/imperative1/command/IO.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Comando ";" Comando](src/lf2/plp/imperative1/command/SequenciaComando.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Skip](src/lf2/plp/imperative1/command/Skip.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [ChamadaProcedimento](src/lf2/plp/imperative2/command/ChamadaProcedimento.java)
+
+Skip ::= 
+
+Atribuicao ::= [Id](src/lf2/plp/expressions2/expression/Id.java) ":=" [Expressao](src/lf2/plp/expressions2/expression/Expressao.java)
+
+Expressao ::= [Valor](src/lf2/plp/expressions2/expression/Valor.java) | [ExpUnaria](src/lf2/plp/expressions2/expression/ExpUnaria.java) | [ExpBinaria](src/lf2/plp/expressions2/expression/ExpBinaria.java) | Id
+
+Valor ::= [ValorConcreto](src/lf2/plp/expressions2/expression/ValorConcreto.java)
+
+ExpUnaria ::= ["-" Expressao](src/lf2/plp/expressions2/expression/ExpMenos.java) | ["not" Expressao](src/lf2/plp/expressions2/expression/ExpNot.java) | ["length" Expressao](src/lf2/plp/expressions2/expression/ExpLength.java)
+
+ExpBinaria ::=  [Expressao "+" Expressao](src/lf2/plp/expressions2/expression/ExpSoma.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "-" Expressao](src/lf2/plp/expressions2/expression/ExpSub.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "and" Expressao](src/lf2/plp/expressions2/expression/ExpAnd.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "or" Expressao](src/lf2/plp/expressions2/expression/ExpOr.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "==" Expressao](src/lf2/plp/expressions2/expression/ExpEquals.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "++" Expressao](src/lf2/plp/expressions2/expression/ExpConcat.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [Expressao "::Valor::" Expressao](src/lf2/plp/expressions2/expression/ExpProb.java)
+
+ComandoDeclaracao :: = "{" [Declaracao](src/lf2/plp/imperative1/declaration/Declaracao.java) ";" Comando "}"
+
+Declaracao ::= [DeclaracaoVariavel](src/lf2/plp/imperative1/declaration/DeclaracaoVariavel.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [DeclaracaoProcedimento](src/lf2/plp/imperative2/declaration/DeclaracaoProcedimento.java)
+
+&emsp; &emsp; &emsp; &emsp;  &ensp;| [DeclaracaoComposta](src/lf2/plp/imperative1/declaration/DeclaracaoComposta.java)
+
+DeclaracaoVariavel ::= "var" Id "=" Expressao 
+
+DeclaracaoComposta ::= Declaracao "," Declaracao
+
+DeclaracaoProcedimento ::= ["proc" Id "(" [ ListaDeclaracaoParametro ] ")" "{" Comando "}"](src/lf2/plp/imperative2/declaration/DeclaracaoProcedimento.java)
+
+ListaDeclaracaoParametro ::= [Tipo Id](src/lf2/plp/imperative2/declaration/DeclaracaoParametro.java) | [Tipo Id "," ListaDeclaracaoParametro](src/lf2/plp/imperative2/declaration/ListaDeclaracaoParametro.java)
+
+Tipo ::= "string" | "int" | "boolean" | "decimal"
+
+While ::= "while" Expressao "do" Comando
+
+IfThenElse ::= "if" Expressao "then" Comando "else" Comando
+
+IO ::= ["write" "(" Expressao ")"](src/lf2/plp/imperative1/command/Write.java) | ["read" "(" Id ")"](src/lf2/plp/imperative1/command/Read.java)
+
+ChamadaProcedimento ::= "call" Id "(" [[ ListaExpressao ]](src/lf2/plp/imperative2/command/ListaExpressao.java) ")" 
+
+ListaExpressao ::= Expressao | Expressao, ListaExpressao
 ***
 <h1>Equipe</h1>
 
